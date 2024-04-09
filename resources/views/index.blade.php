@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lista de Pessoas</title>
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>    
     <header class="navbar">
@@ -18,7 +19,7 @@
             <main class="col">
                 <div class="section-header">
                     <h1>Lista de Pessoas</h1>
-                    <a href="{{ route('cadastrar.pessoa') }}" class="btn btn-success">Cadastrar Pessoa</a>
+                    <a href="{{ route('cadastrar.pessoa') }}" class="btn btn-success">Cadastro</a>
                 </div>
                 <div class="table-wrapper">
                     <table class="table">
@@ -35,7 +36,10 @@
                                 <td>Nome Teste</td>
                                 <td>teste@gmail.com</td>
                                 <td>(49) 999123456</td>
-                                <td>Excluir/Editar</td>
+                                 <td>
+                                    <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
+                                    <a href="#" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
