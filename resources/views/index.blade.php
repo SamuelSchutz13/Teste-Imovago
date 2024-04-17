@@ -22,32 +22,39 @@
                     <a href="{{ route('cadastrar.pessoa') }}" class="btn btn-success">Cadastro</a>
                 </div>
                 <div class="table-wrapper">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Telefone</th>
-                                <th scope="col">Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($findPerson as $person)
+                    @if($findPerson->isEmpty())
+                       <p> Não existe pessoas cadastradas</p>
+                    @else
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td>{{$person->nome}}</td>
-                                    <td>{{$person->email}}</td>
-                                    <td>{{$person->telefone}}</td>
-                                        <td>
-                                        <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
-                                        <a href="#" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
-                                    </td>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Ações</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($findPerson as $person)
+                                    <tr>
+                                        <td>{{$person->nome}}</td>
+                                        <td>{{$person->email}}</td>
+                                        <td>{{$person->telefone}}</td>
+                                            <td>
+                                            <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
+                                            <a href="{{ route('deletar.pessoa') }}" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endif
                 </div>
             </main>
         </div>
     </div>
+
+    @yield('scripts')
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </body>
 </html>
