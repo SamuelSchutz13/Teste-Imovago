@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -30,6 +31,10 @@
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
                         <input type="text" id="telefone" placeholder="Informe o telefone"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" placeholder="Informe uma Descrição"></textarea>
                     </div>
                     <button type="submit" class="btn btn-cadastro">Salvar</button>
                 </form>

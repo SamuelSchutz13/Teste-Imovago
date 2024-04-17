@@ -32,15 +32,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Nome Teste</td>
-                                <td>teste@gmail.com</td>
-                                <td>(49) 999123456</td>
-                                 <td>
-                                    <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
-                                    <a href="#" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
-                                </td>
-                            </tr>
+                            @foreach ($findPerson as $person)
+                                <tr>
+                                    <td>{{$person->nome}}</td>
+                                    <td>{{$person->email}}</td>
+                                    <td>{{$person->telefone}}</td>
+                                        <td>
+                                        <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
+                                        <a href="#" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
