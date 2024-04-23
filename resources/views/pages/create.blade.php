@@ -19,22 +19,23 @@
                 <div class="section-header">
                     <h1>Cadastro de Pessoas</h1>
                 </div>
-                <form class="form" method="#" action="#">
+                <form class="form" method="POST" action="{{ route('cadastrar.pessoa') }}">
+                    @csrf
                     <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" placeholder="Informe o nome completo"/>
+                        <label>Nome Completo</label>
+                        <input type="text" name="nome" placeholder="Informe o nome completo"/>
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="Informe o email"/>
+                        <label>E-mail</label>
+                        <input type="email" name="email" placeholder="Informe o email"/>
                     </div>
                     <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" placeholder="Informe o telefone"/>
+                        <label>Telefone</label>
+                        <input type="text" name="telefone" placeholder="Informe o telefone"/>
                     </div>
                     <div class="form-group">
-                        <label for="descricao">Descrição</label>
-                        <textarea id="descricao" placeholder="Informe uma Descrição"></textarea>
+                        <label>Descrição</label>
+                        <textarea type="text" name="descricao" placeholder="Informe uma Descrição"></textarea>
                     </div>
                     <button type="submit" class="btn btn-cadastro">Salvar</button>
                 </form>

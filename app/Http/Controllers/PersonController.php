@@ -12,13 +12,20 @@ class PersonController extends Controller
         return view('index', compact('findPerson'));
     }
 
-    public function cadastrarPessoa() {
+    public function cadastrarPessoa(Request $request) {
+        if($request->method() == 'POST') {
+            $data = $request->all();
+            Person::create($data);
+            return redirect()->route('index');
+        }
+
         return view('pages.create');
     }
 
     public function deletarPessoa(Request $request) {
-        $person = Person::find($request->id);
-        $person->delete();
+        $id = $request->id;
+        $search = Person::find($id)->delete();       
+        return response()->json(['success' => true]);
         return redirect()->route('index');
     }
 }

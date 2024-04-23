@@ -23,7 +23,7 @@
                 </div>
                 <div class="table-wrapper">
                     @if($findPerson->isEmpty())
-                       <p> Não existe pessoas cadastradas</p>
+                       <p>Não existe pessoas cadastradas</p>
                     @else
                         <table class="table">
                             <thead>
@@ -41,8 +41,9 @@
                                         <td>{{$person->email}}</td>
                                         <td>{{$person->telefone}}</td>
                                             <td>
-                                            <a href="#" title="Editar"><i class="fas fa-edit icon-edit"></i></a>
-                                            <a href="{{ route('deletar.pessoa') }}" title="Excluir"><i class="fas fa-trash icon-delete"></i></a>
+                                            <a href="#"><i class="fas fa-edit icon-edit"></i></a>
+                                            <meta name='csrf-token' content="{{ csrf_token() }}"/>
+                                            <a onclick="deletePerson('{{ route('deletar.pessoa') }}', {{ $person->id }})"><i class="fas fa-trash icon-delete"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -56,5 +57,7 @@
 
     @yield('scripts')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function (){
     Route::get('', [PersonController::class, 'index'])->name('index');
-    Route::delete('/delete', [PersonController::class, 'deletarPessoa'])->name('deletar.pessoa');
     Route::get('/cadastrar', [PersonController::class, 'cadastrarPessoa'])->name('cadastrar.pessoa');
+    Route::post('/cadastrar', [PersonController::class, 'cadastrarPessoa'])->name('cadastrar.pessoa');
+    Route::delete('/delete', [PersonController::class, 'deletarPessoa'])->name('deletar.pessoa');
 });
 
