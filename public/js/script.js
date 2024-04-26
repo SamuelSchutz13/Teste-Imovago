@@ -7,19 +7,6 @@ function deletePerson(url, id) {
       data: {
         id: id,
       },
-      beforeSend: function () {
-        $.blockUI({ message: "Deletando", timeout: 3000 });
-      },
-    })
-      .done(function (data) {
-        $.unblockUI();
-        data.success
-          ? window.location.reload()
-          : alert("Não foi possível deletar esta pessoa");
-      })
-      .fail(function (data) {
-        $.unblockUI();
-        alert("Não foi possível encontrar está pessoa");
-      });
+    });
   }
 }
