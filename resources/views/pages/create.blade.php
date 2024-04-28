@@ -23,15 +23,30 @@
                     @csrf
                     <div class="form-group">
                         <label>Nome Completo</label>
-                        <input type="text" name="nome" placeholder="Informe o nome completo"/>
+                        <input type="text" name="nome" value="{{ old('nome') }}" placeholder="Informe o nome completo" @error('nome') is-invalid @enderror"/>
+                        @if($errors->has('nome'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('nome') }}
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input type="email" name="email" placeholder="Informe o email"/>
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Informe o email"  @error('email') is-invalid @enderror"/>
+                          @if($errors->has('email'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('email') }}
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Telefone</label>
-                        <input type="text" name="telefone" placeholder="Informe o telefone"/>
+                        <input type="text" name="telefone"  value="{{ old('telefone') }}" placeholder="Informe o telefone"  @error('telefone') is-invalid @enderror"/>
+                        @if($errors->has('telefone'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('telefone') }}
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Descrição</label>
