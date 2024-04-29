@@ -8,5 +8,7 @@ function deletePerson(url, id) {
         id: id,
       },
     });
+
+    window.location.reload();
   }
 }

@@ -14,7 +14,7 @@ class FormRequestPerson extends FormRequest
     public function rules(): array
     {
         $request = [];
-        if($this->method() == 'POST') {
+        if($this->method() == 'POST' || $this->method() == 'PUT'){
             return [
                 'nome' => 'required',
                 'email' => 'required',  

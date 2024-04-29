@@ -41,7 +41,7 @@
                                         <td>{{$person->email}}</td>
                                         <td>{{$person->telefone}}</td>
                                             <td>
-                                            <a href="#"><i class="fas fa-edit icon-edit"></i></a>
+                                            <a href="{{ route('atualizar.pessoa', $person->id) }}"><i class="fas fa-edit icon-edit"></i></a>
                                             <meta name='csrf-token' content="{{ csrf_token() }}"/>
                                             <a onclick="deletePerson('{{ route('deletar.pessoa') }}', {{ $person->id }})"><i class="fas fa-trash icon-delete"></i></a>
                                         </td>

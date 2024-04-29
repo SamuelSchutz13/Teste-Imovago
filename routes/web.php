@@ -18,6 +18,8 @@ Route::prefix('/')->group(function (){
     Route::get('', [PersonController::class, 'index'])->name('index');
     Route::get('/cadastrar', [PersonController::class, 'cadastrarPessoa'])->name('cadastrar.pessoa');
     Route::post('/cadastrar', [PersonController::class, 'cadastrarPessoa'])->name('cadastrar.pessoa');
-    Route::delete('/delete', [PersonController::class, 'deletarPessoa'])->name('deletar.pessoa');
+     Route::get('/atualizar/{id}', [PersonController::class, 'atualizarPessoa'])->name('atualizar.pessoa');
+    Route::put('/atualizar/{id}', [PersonController::class, 'atualizarPessoa'])->name('atualizar.pessoa');
+    Route::delete('/deletar', [PersonController::class, 'deletarPessoa'])->name('deletar.pessoa');
 });
 
