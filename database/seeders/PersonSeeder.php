@@ -15,6 +15,7 @@ class PersonSeeder extends Seeder
                 'nome' => 'Samuel',
                 'email' => 'samuel@gmail.com',
                 'telefone' => '(49) 999314419',
+                'cpf' => '12345678910',
                 'descricao' => 'Aqui tem uma descrição'
             ]
        );  

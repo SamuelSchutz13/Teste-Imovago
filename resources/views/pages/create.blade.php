@@ -32,16 +32,25 @@
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Informe o email"  @error('email') is-invalid @enderror"/>
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Informe o email" @error('email') is-invalid @enderror"/>
                           @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
                             </div>
                         @endif
                     </div>
+                     <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" name="cpf" value="{{ old('cpf') }}" placeholder="Informe o CPF" @error('cpf') is-invalid @enderror"/>
+                          @if($errors->has('cpf'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('cpf') }}
+                            </div>
+                        @endif
+                    </div>
                     <div class="form-group">
                         <label>Telefone</label>
-                        <input type="text" name="telefone" value="{{ old('telefone') }}" placeholder="Informe o telefone"  @error('telefone') is-invalid @enderror"/>
+                        <input type="text" name="telefone"" value="{{ old('telefone') }}" placeholder="Informe o telefone" @error('telefone') is-invalid @enderror"/>
                         @if($errors->has('telefone'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('telefone') }}
@@ -57,5 +66,9 @@
             </main>
         </div>
     </div>
+    @yield('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

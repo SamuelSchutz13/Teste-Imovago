@@ -13,6 +13,7 @@ class Person extends Model
         'nome',
         'email',
         'telefone',
+        'cpf',
         'descricao',
     ];
 }

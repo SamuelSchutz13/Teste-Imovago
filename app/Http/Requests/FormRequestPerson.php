@@ -15,10 +15,12 @@ class FormRequestPerson extends FormRequest
     {
         $request = [];
         if($this->method() == 'POST' || $this->method() == 'PUT'){
+            $personId = $this->route('id');
             return [
-                'nome' => 'required',
-                'email' => 'required',  
-                'telefone' => 'required',
+              'nome' => 'required',
+                'email' => 'required|unique:people,email,'.$personId,
+                'telefone' => 'required|unique:people,telefone,'.$personId,
+                'cpf' => 'required|unique:people,cpf,'.$personId,
             ];
         }
         return $request;

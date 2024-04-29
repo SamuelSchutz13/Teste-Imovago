@@ -31,6 +31,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Telefone</th>
+                                    <th scope="col">CPF</th>
                                     <th scope="col">Ações</th>
                                 </tr>
                             </thead>
@@ -40,6 +41,7 @@
                                         <td>{{$person->nome}}</td>
                                         <td>{{$person->email}}</td>
                                         <td>{{$person->telefone}}</td>
+                                        <td>{{$person->cpf}}</td>
                                             <td>
                                             <a href="{{ route('atualizar.pessoa', $person->id) }}"><i class="fas fa-edit icon-edit"></i></a>
                                             <meta name='csrf-token' content="{{ csrf_token() }}"/>
@@ -54,9 +56,9 @@
             </main>
         </div>
     </div>
-
     @yield('scripts')
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('telefone');
+            $table->string('cpf');
             $table->string('descricao')->nullable();
             $table->timestamps();
         });
